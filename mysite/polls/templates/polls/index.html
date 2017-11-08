@@ -7,7 +7,7 @@
         <li><a href="/polls/{{ question.id }}/">{{ question.question_text }}</a></li>
     {% endfor %} -->
 {% for movie in movie_list %}
-      <h1> {{movie}} </h1>
+      <h1> {{movie.title}} </h1>
 {% endfor %}
     <!-- </ul> -->
 {% else %}
