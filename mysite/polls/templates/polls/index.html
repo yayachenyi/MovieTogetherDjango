@@ -8,9 +8,9 @@
     {% endfor %} -->
 <tbody>
 {% for movie in movie_list %}
-      {% cycle '<tr>' '' '' '' %}
+      {% cycle '<tr>' %}
       <td> {{movie.title}} </td>
-      {% cycle '' '' '' '</tr>' %}
+      {% cycle '</tr>' %}
 {% endfor %}
 </tbody>
     <!-- </ul> -->
