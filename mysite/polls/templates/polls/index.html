@@ -6,7 +6,9 @@
     <!-- {% for question in latest_question_list %}
         <li><a href="/polls/{{ question.id }}/">{{ question.question_text }}</a></li>
     {% endfor %} -->
-      <a> {{movie_list}} </a>
+    { %for movie in moview_list%}
+      <a> {{movie.title}} </a>
+      { %endfor%}
     </ul>
 {% else %}
     <p>No polls are available.</p>
