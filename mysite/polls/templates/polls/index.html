@@ -6,12 +6,15 @@
     <!-- {% for question in latest_question_list %}
         <li><a href="/polls/{{ question.id }}/">{{ question.question_text }}</a></li>
     {% endfor %} -->
-<table>
+
+<table style="width: 100%;">
+  <tbody>
 {% for movie in movie_list %}
   <tr>
     <th> {{movie.title}} </th>
   </tr>
 {% endfor %}
+  </tbody>
 </table>
     <!-- </ul> -->
 {% else %}
