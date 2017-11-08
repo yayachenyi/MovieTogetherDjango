@@ -269,7 +269,7 @@ header + header {
 table tr.no-border th, table tr.no-border td {
   border-top: 0; }
 
-
+<style>
 .class1 tbody tr:nth-child(2n) {
   background: #f9f9f9;
 }
@@ -277,3 +277,4 @@ table tr.no-border th, table tr.no-border td {
 .class2 thead tr th, .class2 tbody tr td  {
   border-style: dashed;
 }
+</style>
