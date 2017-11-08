@@ -9,7 +9,7 @@ urlpatterns = [
     # ex: /polls/5/
     url(r'^(?P<question_id>[0-9]+)/$', views.detail, name='detail'),
     # ex: /polls/5/
-    url(r'^mainboad/$', views.detail, name='detail'),
+    url(r'^mainboard/$', views.detail, name='mainboard'),
     # ex: /polls/5/results/
     url(r'^(?P<question_id>[0-9]+)/results/$', views.results, name='results'),
     # ex: /polls/5/vote/
