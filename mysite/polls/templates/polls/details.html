@@ -1,11 +1,5 @@
 {% load static %}
-{% block javascript %}
-  <script>
-    function insertFunction(val) {
-      console.log(val);
-    };
-  </script>
-{% endblock %}
+
 <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
 {% if movie_list %}
     <!-- <ul> -->
@@ -20,7 +14,7 @@
     <td style="width: 25%;"> {{movie.title}}</td>
     <td style="width: 25%;"> {{movie.year}}</td>
     <td style="width: 25%;"> {{movie.genre}}</td>
-    <td style="width: 25%;"> <button type="button" onclick="insertFunction({{movie.title}})">Want to watch!</button></td>
+    <td style="width: 25%;"> <button type="button" onclick="insertFunction('movie')">Want to watch!</button></td>
   </tr>
 {% endfor %}
   </tbody>
@@ -29,3 +23,11 @@
 {% else %}
     <p>No polls are available.</p>
 {% endif %}
+
+{% block javascript %}
+  <script>
+    function insertFunction(val) {
+      console.log(val);
+    };
+  </script>
+{% endblock %}
