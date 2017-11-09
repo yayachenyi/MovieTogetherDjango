@@ -14,7 +14,7 @@
     <td style="width: 25%;"> {{movie.title}}</td>
     <td style="width: 25%;"> {{movie.year}}</td>
     <td style="width: 25%;"> {{movie.genre}}</td>
-    <td style="width: 25%;"> <button type="button">Want to watch!</button></td>
+    <td style="width: 25%;"> <button type="button" onclick=insertFunction({{movie.title}}) id = "insert_wish">Want to watch!</button></td>
   </tr>
 {% endfor %}
   </tbody>
@@ -23,3 +23,11 @@
 {% else %}
     <p>No polls are available.</p>
 {% endif %}
+
+{% block javascript %}
+  <script>
+    $("#insert_wish").change(function () {
+      console.log( $(this).val() );
+    });
+  </script>
+{% endblock %}
