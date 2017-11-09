@@ -29,10 +29,11 @@
   <script>
     function insertFunction(val) {
       console.log(val);
+      var movie = val.val()
       $.ajax({
         url: '/ajax/insert_wishlist',
         data: {
-          'movie': val
+          'movie': movie
         },
         dataType: 'json',
         success: function (data) {
