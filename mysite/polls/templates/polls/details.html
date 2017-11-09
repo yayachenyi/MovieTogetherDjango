@@ -14,7 +14,7 @@
     <td style="width: 25%;"> {{movie.title}}</td>
     <td style="width: 25%;"> {{movie.year}}</td>
     <td style="width: 25%;"> {{movie.genre}}</td>
-    <td style="width: 25%;"> <button type="button" onclick=insertFunction({{movie.title}}) id = "insert_wish">Want to watch!</button></td>
+    <td style="width: 25%;"> <button type="button" onclick=insertFunction({{movie.title}})>Want to watch!</button></td>
   </tr>
 {% endfor %}
   </tbody>
@@ -26,7 +26,7 @@
 
 {% block javascript %}
   <script>
-    function (val) {
+    function insertFunction(val) {
       console.log(val );
     };
   </script>
