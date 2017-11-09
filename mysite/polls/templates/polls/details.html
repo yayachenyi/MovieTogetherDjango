@@ -28,6 +28,19 @@
   <script>
     function insertFunction(val) {
       console.log(val);
+      $.ajax({
+        url: '/ajax/insert_wishlist/',
+        data: {
+          'movie': val
+        },
+        dataType: 'json',
+        success: function (data) {
+          if (data.exists) {
+            alert("A user with this username already exists.");
+          }else{
+            alert("Successfully added to your wishlist!");
+          }
+        }
     };
   </script>
 {% endblock %}

@@ -9,7 +9,7 @@ def index(request):
     # latest_question_list = Question.objects.order_by('-pub_date')[:5]
     context = {'movie_list': Movies.objects.all()}
     return render(request, 'polls/index.html', context)
-    
+
 def detail(request, question_id):
     return HttpResponse("You're looking at question %s." % question_id)
 
@@ -23,3 +23,11 @@ def vote(request, question_id):
 def mainboard(request):
     context = {'movie_list': Movies.objects.all()}
     return render(request, 'polls/details.html', context)
+
+def insert_wishlist(request):
+    wishmovie = request.GET.get('movie', None)
+    console.log(wishmovie)
+    data = {
+        'exists': False
+    }
+    return JsonResponse(data)
