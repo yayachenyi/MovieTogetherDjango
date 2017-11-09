@@ -1,5 +1,11 @@
 {% load static %}
-
+{% block javascript %}
+  <script>
+    function insertFunction(val) {
+      console.log(val );
+    };
+  </script>
+{% endblock %}
 <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
 {% if movie_list %}
     <!-- <ul> -->
@@ -23,11 +29,3 @@
 {% else %}
     <p>No polls are available.</p>
 {% endif %}
-
-{% block javascript %}
-  <script>
-    function insertFunction(val) {
-      console.log(val );
-    };
-  </script>
-{% endblock %}
