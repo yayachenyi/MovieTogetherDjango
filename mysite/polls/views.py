@@ -30,7 +30,7 @@ def mainboard(request):
     data = {
         'exists': False
     }
-    return JsonResponse(data)
+    #return JsonResponse(data)
     return render(request, 'polls/details.html', context)
 
 def insert_wishlist(request):
