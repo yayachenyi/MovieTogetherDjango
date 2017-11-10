@@ -108,6 +108,8 @@
 
   function searchFunction(val){
     var qq = val
+    console.log("search query")
+    console.log(qq)
     $.ajax({
       url: '/polls/search/',
       data: {
