@@ -33,7 +33,8 @@
       $.ajax({
         url: '/polls/insertwishlist/',
         data: {
-          'movie': movie
+          'movie': movie,
+          'userid' : 0
         },
         dataType: 'json',
         success: function (data) {

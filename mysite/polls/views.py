@@ -24,7 +24,6 @@ def vote(request, question_id):
 
 def mainboard(request):
     print("inside mainboard")
-    wishmovie = request.GET.get('movie', None)
     print(wishmovie)
     context = {'movie_list': Movies.objects.all()}
     data = {
@@ -36,9 +35,14 @@ def mainboard(request):
 def insertwishlist(request):
     print("something for debug")
     print(request)
+
     wishmovie = request.GET.get('movie', None)
+    userid = request.GET.get('userid', None)
     #console.log(wishmovie)
     data = {
         'exists': False
     }
+    return JsonResponse(data)
+
+def search(request)
     return JsonResponse(data)
