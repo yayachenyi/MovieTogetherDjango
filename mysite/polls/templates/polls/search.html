@@ -67,7 +67,7 @@
         <li><a href="/polls/{{ question.id }}/">{{ question.question_text }}</a></li>
     {% endfor %} -->
 
-<table style="width: 100%;">
+<table id = '_appendHere' style="width: 100%;">
   <tbody>
 {% for movie in movie_list %}
   <tr>
@@ -116,7 +116,7 @@
         'qquery': qq
       },
       success: function (data) {
-        console.log(data)
+        $('#_appendHere').append(data);
         $('.row.replace').html(data);
       }
   })
