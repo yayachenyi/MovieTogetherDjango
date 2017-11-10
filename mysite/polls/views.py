@@ -27,6 +27,10 @@ def mainboard(request):
     wishmovie = request.GET.get('movie', None)
     print(wishmovie)
     context = {'movie_list': Movies.objects.all()}
+    data = {
+        'exists': False
+    }
+    return JsonResponse(data)
     return render(request, 'polls/details.html', context)
 
 def insert_wishlist(request):
