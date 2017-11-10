@@ -24,6 +24,8 @@ def vote(request, question_id):
 
 def mainboard(request):
     print("inside mainboard")
+    wishmovie = request.GET.get('movie', None)
+    print(wishmovie)
     context = {'movie_list': Movies.objects.all()}
     return render(request, 'polls/details.html', context)
 
