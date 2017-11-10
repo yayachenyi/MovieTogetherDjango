@@ -15,5 +15,5 @@ urlpatterns = [
     # ex: /polls/5/vote/
     url(r'^(?P<question_id>[0-9]+)/vote/$', views.vote, name='vote'),
     # insert into wishList
-    url(r'^ajax/insertwishlist/', views.insertwishlist, name='insertwishlist'),
+    url(r'^/ajax/insertwishlist/', views.insertwishlist, name='insertwishlist'),
 ]
