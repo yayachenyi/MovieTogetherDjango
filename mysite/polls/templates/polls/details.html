@@ -15,7 +15,7 @@
     <td style="width: 25%;"> {{movie.title}}</td>
     <td style="width: 25%;"> {{movie.year}}</td>
     <td style="width: 25%;"> {{movie.genre}}</td>
-    <td style="width: 25%;"> <button id="likes" data-catid="{{movie.title}}" type="button">Want to watch!</button></td>
+    <td style="width: 25%;"> <button id="likes" data-catid="{{movie.title}}" type="submit" formmethod="post">Want to watch!</button></td>
   </tr>
 {% endfor %}
   </tbody>
