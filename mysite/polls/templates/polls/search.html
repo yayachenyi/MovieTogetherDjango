@@ -107,11 +107,11 @@
   };
 
   function searchFunction(val){
-    var query = val
+    var qq = val
     $.ajax({
       url: '/polls/search/',
       data: {
-        'query': query
+        'qquery': qq
       },
       dataType: 'json',
       success: function (data) {
