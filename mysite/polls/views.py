@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
+from django.http import JsonResponse
 
 from .models import Movies
 
@@ -25,6 +26,7 @@ def mainboard(request):
     return render(request, 'polls/details.html', context)
 
 def insert_wishlist(request):
+    console.log(request)
     wishmovie = request.GET.get('movie', None)
     console.log(wishmovie)
     data = {
