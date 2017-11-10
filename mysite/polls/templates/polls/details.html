@@ -15,7 +15,7 @@
     <td style="width: 25%;"> {{movie.title}}</td>
     <td style="width: 25%;"> {{movie.year}}</td>
     <td style="width: 25%;"> {{movie.genre}}</td>
-    <td style="width: 25%;"> <button type="button" onclick="insertFunction('{{movie.title}}')">Want to watch!</button></td>
+    <td style="width: 25%;"> <button id="likes" data-catid="{{movie.title}}" type="button">Want to watch!</button></td>
   </tr>
 {% endfor %}
   </tbody>
@@ -27,23 +27,26 @@
 
 {% block javascript %}
   <script>
-    function insertFunction(val) {
-      console.log(val);
-      var movie = val
-      $.ajax({
-        url: '/ajax/insert_wishlist',
-        data: {
-          'movie': movie
-        },
-        dataType: 'json',
-        success: function (data) {
-          if (data.exists) {
-            alert("A user with this username already exists.");
-          }else{
-            alert("Successfully added to your wishlist!");
-          }
+  $('#likes').click(function(){
+    var catid;
+    catid = $(this).attr("data-catid");
+    console.log(catid);
+    var movie = $(this).val();
+    $.ajax({
+      url: '/ajax/insert_wishlist',
+      data: {
+        'movie': catid
+      },
+      dataType: 'json',
+      success: function (data) {
+        if (data.exists) {
+          alert("A user with this username already exists.");
+        }else{
+          alert("Successfully added to your wishlist!");
         }
-    })
-  };
+      }
+  })
+  });
+
   </script>
 {% endblock %}
