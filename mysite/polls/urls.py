@@ -17,4 +17,5 @@ urlpatterns = [
     # insert into wishList
     url(r'^insertwishlist/$', views.insertwishlist, name='insertwishlist'),
     url(r'^search/$', views.search, name='search'),
+    url(r'^wishlist/$', views.wishlist, name='wishlist'),
 ]
