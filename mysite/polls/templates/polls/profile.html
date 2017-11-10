@@ -111,10 +111,11 @@
       console.log(val3)
       var movie = val
       $.ajax({
-        url: '/polls/insertwishlist/',
+        url: '/polls/profileupdate/',
         data: {
-          'movie': movie,
-          'userid' : 0
+          'newname': val1,
+          'newgender' : val2,
+          'newlocation' : val3
         },
         dataType: 'json',
         success: function (data) {
