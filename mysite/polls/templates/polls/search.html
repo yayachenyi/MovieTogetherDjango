@@ -1,0 +1,86 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
+
+<section class="fdb-block">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6 text-center">document.getElementById('a').value
+          <h1>Search your movie</h1>
+          <div class="input-group mt-4 mb-4">
+            <input type="text" id = 'a' class="form-control" placeholder="Enter your favorite movie">
+            <span class="input-group-btn">
+              <button class="btn" type="button" onclick="searchFunction(document.getElementById('a').value)">Submit</button>
+            </span>
+          </div>
+
+          <p class="text-h4">Find us on <a href="https://www.froala.com">Facebook</a> and <a href="https://www.froala.com">Twitter</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+{% if movie_list %}
+    <!-- <ul> -->
+    <!-- {% for question in latest_question_list %}
+        <li><a href="/polls/{{ question.id }}/">{{ question.question_text }}</a></li>
+    {% endfor %} -->
+
+<table style="width: 100%;">
+  <tbody>
+{% for movie in movie_list %}
+  <tr>
+    <td style="width: 25%;"> {{movie.title}}</td>
+    <td style="width: 25%;"> {{movie.year}}</td>
+    <td style="width: 25%;"> {{movie.genre}}</td>
+    <td style="width: 25%;"> <button type="button" onclick="insertFunction('{{movie.movieid}}')">Want to watch!</button></td>
+  </tr>
+{% endfor %}
+  </tbody>
+</table>
+    <!-- </ul> -->
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+
+{% block javascript %}
+  <script>
+    function insertFunction(val) {
+      console.log(val);
+      var movie = val
+      $.ajax({
+        url: '/polls/insertwishlist/',
+        data: {
+          'movie': movie,
+          'userid' : 0
+        },
+        dataType: 'json',
+        success: function (data) {
+          if (data.exists) {
+            alert("A user with this username already exists.");
+          }else{
+            alert("Successfully added to your wishlist!");
+          }
+        }
+    })
+  };
+
+  function searchFunction(val){
+    var query = val
+    $.ajax({
+      url: '/polls/search/',
+      data: {
+        'query': query
+      },
+      dataType: 'json',
+      success: function (data) {
+        if (data.exists) {
+          alert("A user with this username already exists.");
+        }else{
+          alert("Successfully added to your wishlist!");
+        }
+      }
+  })
+  }
+  </script>
+{% endblock %}

@@ -16,4 +16,5 @@ urlpatterns = [
     url(r'^(?P<question_id>[0-9]+)/vote/$', views.vote, name='vote'),
     # insert into wishList
     url(r'^insertwishlist/$', views.insertwishlist, name='insertwishlist'),
+    url(r'^search/$', views.search, name='search'),
 ]
