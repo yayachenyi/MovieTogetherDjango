@@ -26,6 +26,7 @@ def mainboard(request):
     return render(request, 'polls/details.html', context)
 
 def insert_wishlist(request):
+    console.log("something for debug")
     console.log(request)
     wishmovie = request.GET.get('movie', None)
     console.log(wishmovie)
