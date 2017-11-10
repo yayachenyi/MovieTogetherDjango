@@ -80,9 +80,6 @@
   </tbody>
 </table>
     <!-- </ul> -->
-{% else %}
-    <p>No polls are available.</p>
-{% endif %}
 
 {% block javascript %}
   <script>
@@ -116,8 +113,7 @@
         'qquery': qq
       },
       success: function (data) {
-        $('#_appendHere').append(data);
-        $('.row.replace').html(data);
+        $("html").html(data);
       }
   })
   }
