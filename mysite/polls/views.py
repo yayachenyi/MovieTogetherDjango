@@ -33,7 +33,7 @@ def mainboard(request):
     JsonResponse(data)
     return render(request, 'polls/details.html', context)
 
-def insert_wishlist(request):
+def insertwishlist(request):
     print("something for debug")
     print(request)
     wishmovie = request.GET.get('movie', None)
