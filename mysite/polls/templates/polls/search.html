@@ -110,7 +110,7 @@
     var qq = val
     console.log("search query")
     console.log(qq)
-    $.post({
+    $.ajax({
       url: '/polls/searchupdate/',
       data: {
         'qquery': qq
