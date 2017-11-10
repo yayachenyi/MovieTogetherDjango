@@ -8,6 +8,7 @@ from .models import Movies
 
 def index(request):
     # latest_question_list = Question.objects.order_by('-pub_date')[:5]
+    print("inside homepage")
     context = {'movie_list': Movies.objects.all()}
     return render(request, 'polls/index.html', context)
 
@@ -22,6 +23,7 @@ def vote(request, question_id):
     return HttpResponse("You're voting on question %s." % question_id)
 
 def mainboard(request):
+    print("inside mainboard")
     context = {'movie_list': Movies.objects.all()}
     return render(request, 'polls/details.html', context)
 
