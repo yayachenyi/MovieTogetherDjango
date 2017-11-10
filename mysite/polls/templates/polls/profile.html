@@ -119,11 +119,7 @@
         },
         dataType: 'json',
         success: function (data) {
-          if (data.exists) {
-            alert("A user with this username already exists.");
-          }else{
-            alert("Successfully added to your wishlist!");
-          }
+          console.log(data)
         }
     })
   };
