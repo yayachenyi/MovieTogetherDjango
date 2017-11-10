@@ -1,11 +1,11 @@
 {% load static %}
 
 <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
-
+<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
 <section class="fdb-block">
     <div class="container">
       <div class="row justify-content-center">
-        <div class="col-12 col-md-8 col-lg-6 text-center">document.getElementById('a').value
+        <div class="col-12 col-md-8 col-lg-6 text-center">
           <h1>Search your movie</h1>
           <div class="input-group mt-4 mb-4">
             <input type="text" id = 'a' class="form-control" placeholder="Enter your favorite movie">
@@ -19,7 +19,7 @@
       </div>
     </div>
   </section>
-<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+
 {% if movie_list %}
     <!-- <ul> -->
     <!-- {% for question in latest_question_list %}
