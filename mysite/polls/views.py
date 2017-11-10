@@ -37,7 +37,7 @@ def insertwishlist(request):
     print("something for debug")
     print(request)
     wishmovie = request.GET.get('movie', None)
-    console.log(wishmovie)
+    #console.log(wishmovie)
     data = {
         'exists': False
     }
