@@ -58,7 +58,7 @@
     <td style="width: 25%;"> {{movie.title}}</td>
     <td style="width: 25%;"> {{movie.year}}</td>
     <td style="width: 25%;"> {{movie.genre}}</td>
-    <td style="width: 25%;"> <button type="button" onclick="insertFunction('{{movie.movieid}}')">Want to watch!</button></td>
+    <td style="width: 25%;"> <button type="button" onclick="insertFunction('{{movie.movieid}}')">Unlike!</button></td>
   </tr>
 {% endfor %}
   </tbody>
@@ -82,7 +82,7 @@
         dataType: 'json',
         success: function (data) {
           if (data.exists) {
-            alert("A user with this username already exists.");
+            alert("Successfully delete");
           }else{
             alert("Successfully added to your wishlist!");
           }
