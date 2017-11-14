@@ -19,6 +19,7 @@ urlpatterns = [
     url(r'^search/$', views.search, name='search'),
     url(r'^searchupdate/$', views.searchupdate, name='searchupdate'),
     url(r'^wishlist/$', views.wishlist, name='wishlist'),
+    url(r'^deletepost/$', views.deletepost, name='deletepost'),
     url(r'^profile/$', views.profile, name='profile'),
     url(r'^profileupdate/$', views.profileupdate, name='profileupdate'),
 ]
