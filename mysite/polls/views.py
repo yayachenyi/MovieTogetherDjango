@@ -4,7 +4,7 @@ from django.template import loader
 from django.http import JsonResponse
 from django.template.loader import render_to_string
 from .models import Movies, Wish, Users
-from .signals import delete_wishlist 
+from .signals import delete_wishlist
 
 def index(request):
     # latest_question_list = Question.objects.order_by('-pub_date')[:5]
@@ -101,7 +101,10 @@ def deletepost(request):
         data = {
             'exists': False
         }
-    return JsonResponse(data)
+    wishlist = Wish.objects.filter(userid=0).values_list('movieid')
+    context = {'movie_list': Movies.objects.filter(movieid__in=wishlist)}
+    return render(request, 'polls/wishlist.html', context)
+    #return JsonResponse(data)
 
 def profile(request):
     print("insideprofile")
@@ -118,7 +121,7 @@ def profileupdate(request):
     newname = request.GET.get('newname', None)
     newgender = request.GET.get('newgender', None)
     newlocation = request.GET.get('newlocation', None)
-    
+
     # perform user database update here
     # update = Users.objects.get(userid=userid)
     update = Users.objects.get(userid=0)
@@ -129,7 +132,7 @@ def profileupdate(request):
         update.save()
     else:
         Users(userid=0, username=newname, gender=newgender, location=newlocation).save()
-    
+
     print(newname)
     data = {
           'name' : newname,

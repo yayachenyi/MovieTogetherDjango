@@ -1,9 +1,6 @@
 li a {
     color: green;
 }
-body {
-    background: white url("imgs/poster1.jpg") no-repeat right bottom;
-}
 .btn {
   padding: 9px 26px;
   background-color: #528bff;

@@ -74,18 +74,14 @@
       console.log(val);
       var movie = val
       $.ajax({
-        url: '/polls/insertwishlist/',
+        url: '/polls/deletepost/',
         data: {
           'movie': movie,
           'userid' : 0
         },
         dataType: 'json',
         success: function (data) {
-          if (data.exists) {
-            alert("Successfully delete");
-          }else{
-            alert("Successfully added to your wishlist!");
-          }
+          $("html").html(data);
         }
     })
   };
